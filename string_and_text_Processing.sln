@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "string_and_text_Processing", "string_and_text_Processing\string_and_text_Processing.csproj", "{0B9CAA5D-40B4-4A96-A787-C63D199E7A6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "character_Multiplier", "character_Multiplier\character_Multiplier.csproj", "{BF45E57A-F8B7-43C8-A500-72E80ADF46B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B9CAA5D-40B4-4A96-A787-C63D199E7A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9CAA5D-40B4-4A96-A787-C63D199E7A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9CAA5D-40B4-4A96-A787-C63D199E7A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9CAA5D-40B4-4A96-A787-C63D199E7A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF45E57A-F8B7-43C8-A500-72E80ADF46B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF45E57A-F8B7-43C8-A500-72E80ADF46B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF45E57A-F8B7-43C8-A500-72E80ADF46B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF45E57A-F8B7-43C8-A500-72E80ADF46B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8333DDA8-E309-43BD-A58C-2E3E1F371B81}
+	EndGlobalSection
+EndGlobal
