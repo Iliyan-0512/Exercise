@@ -2,36 +2,44 @@
 using System.Collections.Generic;
 using System.Linq;
 
-class fastfood
+class FastFood
 {
     static void Main()
     {
-        string[] songs=Console.ReadLine().Split(",").ToArray();
-        Queue<string> queue = new  Queue<string>();
-        string command = Console.ReadLine();
-        while (queue.Count>0) 
+        string[] songs = Console.ReadLine().Split(", ").ToArray();
+        Queue<string> queue = new Queue<string>(songs);
+
+        while (true)
         {
-            if (command=="Play")
+            string command = Console.ReadLine();
+
+            if (command == "Play")
             {
-                queue.Dequeue();
-            }
-            else if (command=="Add")
-            {
-                if (!queue.Contains(songs[0]))
+                if (queue.Count > 0)
                 {
-                    queue.Enqueue(songs[0]);
+                    Console.WriteLine($"Playing {queue.Dequeue()}");
                 }
                 else
                 {
-                    Console.WriteLine($"{songs[0]} is already contained!");
+                    Console.WriteLine("No more songs!");
+                    break;
                 }
             }
-            else if(command=="Show")
+            else if (command.StartsWith("Add"))
             {
-                foreach (string s in songs)
+                string songToAdd = command.Split(" ")[1];
+                if (!queue.Contains(songToAdd))
                 {
-                    Console.WriteLine(s + ", ");
+                    queue.Enqueue(songToAdd);
                 }
+                else
+                {
+                    Console.WriteLine($"{songToAdd} is already contained!");
+                }
+            }
+            else if (command == "Show")
+            {
+                Console.WriteLine(string.Join(", ", queue));
             }
         }
     }
