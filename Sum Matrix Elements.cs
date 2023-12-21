@@ -13,18 +13,17 @@ namespace MyApp // Note: actual namespace depends on the project name.
         static void Main(string[] args)
         {
             // Read matrix sizes
-            string[] sizes = Console.ReadLine().Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+           string[] sizes=Console.ReadLine().Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
             int rows = int.Parse(sizes[0]);
-            int columns = int.Parse(sizes[1]);
-
+            int colums = int.Parse(sizes[1]);
             // Initialize the matrix
-            int[,] matrix = new int[rows, columns];
-
+            int[,] matrix = new int[rows, colums];
             // Read matrix elements
             for (int i = 0; i < rows; i++)
             {
-                string[] rowElements = Console.ReadLine().Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
-                for (int j = 0; j < columns; j++)
+                string[] rowElements = Console.ReadLine().Split(new char[] { ' ', ',' },
+                    StringSplitOptions.RemoveEmptyEntries);
+                for (int j = 0; j < colums; j++)
                 {
                     matrix[i, j] = int.Parse(rowElements[j]);
                 }
@@ -32,14 +31,12 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             // Calculate count of rows, count of columns, and sum of matrix elements
             int rowCount = matrix.GetLength(0);
-            int columnCount = matrix.GetLength(1);
+            int columnCount= matrix.GetLength(1);
             int sum = 0;
-
             foreach (int element in matrix)
             {
-                sum += element;
+                sum+= element;
             }
-
             // Print the results
             Console.WriteLine(rowCount);
             Console.WriteLine(columnCount);
