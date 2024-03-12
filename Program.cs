@@ -1,62 +1,26 @@
-﻿using System;
+﻿using SwordDamage;
+using System;
 
-class ActivationKeyGenerator
+namespace MyApp
 {
-    static void Main()
+    internal class SwordDamage
     {
-        string activationKey = Console.ReadLine();
-
-        string command;
-        while ((command = Console.ReadLine()) != "Generate")
+        static void Main(string[] args)
         {
-            string[] commandArgs = command.Split(">>>");
-
-            if (commandArgs[0] == "Contains")
+            Random random = new Random();
+            SwordArt instance = new SwordArt();
+            while (true)
             {
-                if (activationKey.Contains(commandArgs[1]))
+                Console.Write("0 for no magic/flaming, 1 for magic, 2 for flaming, " +
+                    "3 for both, anything else to quit: ");
+                char key = Console.ReadKey().KeyChar;
+                if (key != '0' && key != '1' && key != '2' && key != '3')
                 {
-                    Console.WriteLine($"{activationKey} contains {commandArgs[1]}");
-                }
-                else
-                {
-                    Console.WriteLine("Substring not found!");
-                }
+                    return;
+                } 
+                int roll=random.Next(1,7)+random.Next(1,7)+ random.Next(1,7);
             }
-            else if (commandArgs[0] == "Flip")
-            {
-                int startIndex = int.Parse(commandArgs[2]);
-                int endIndex = int.Parse(commandArgs[3]);
 
-                if (startIndex >= 0 && endIndex <= activationKey.Length && startIndex < endIndex)
-                {
-                    string substring = activationKey.Substring(startIndex, endIndex - startIndex);
-
-                    if (commandArgs[1] == "Upper")
-                    {
-                        substring = substring.ToUpper();
-                    }
-                    else if (commandArgs[1] == "Lower")
-                    {
-                        substring = substring.ToLower();
-                    }
-
-                    activationKey = activationKey.Substring(0, startIndex) + substring + activationKey.Substring(endIndex);
-                    Console.WriteLine(activationKey);
-                }
-            }
-            else if (commandArgs[0] == "Slice")
-            {
-                int startIndex = int.Parse(commandArgs[1]);
-                int endIndex = int.Parse(commandArgs[2]);
-
-                if (startIndex >= 0 && endIndex <= activationKey.Length && startIndex < endIndex)
-                {
-                    activationKey = activationKey.Remove(startIndex, endIndex - startIndex);
-                    Console.WriteLine(activationKey);
-                }
-            }
         }
-
-        Console.WriteLine($"Your activation key is: {activationKey}");
     }
 }
