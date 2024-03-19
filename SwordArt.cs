@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace SwordDamage_Console_Part_1
@@ -17,6 +18,7 @@ namespace SwordDamage_Console_Part_1
         public void CalculateDamage()
         {
             Damage = (int)(Roll * MagicMultiplier) + BASE_DAMAGE + FlamingDamage;
+            Debug.WriteLine($"CalculateDamage finished: {Damage} (roll: {Roll})");
         }
 
         public void SetMagic(bool isMagic)
@@ -30,6 +32,7 @@ namespace SwordDamage_Console_Part_1
                 MagicMultiplier = 1M;
             }
             CalculateDamage();
+            Debug.WriteLine($"SetMagic finished: {Damage} (roll: {Roll})");
         }
 
         public void SetFlaming(bool isFlaming)
@@ -39,6 +42,7 @@ namespace SwordDamage_Console_Part_1
             {
                 Damage += FLAME_DAMAGE;
             }
+            Debug.WriteLine($"SetMagic finished: {Damage} (roll: {Roll})");
         }
     }
 }
