@@ -1,0 +1,3 @@
+﻿  task1FromStudBookC++.cpp
+C:\iliyan\proggraming\c++\swu\task1FromStudBookC++\task1FromStudBookC++.cpp(23,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  task1FromStudBookC++.vcxproj -> C:\iliyan\proggraming\task\taskAlog\Phonebook\x64\Debug\task1FromStudBookC++.exe
