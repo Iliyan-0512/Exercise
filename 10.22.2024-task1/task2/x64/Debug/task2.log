@@ -1,0 +1,3 @@
+﻿  task2.cpp
+C:\iliyan\proggraming\c++\swu\classwork\10.22.2024-task1\task2\task2.cpp(10,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  task2.vcxproj -> C:\iliyan\proggraming\c++\swu\classwork\10.22.2024-task1\x64\Debug\task2.exe
