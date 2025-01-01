@@ -1,45 +1,42 @@
-﻿using Implementing_Linked_List;
-using System;
+﻿using System;
+using System.Linq;
 
-namespace ImplementingDoublyList
+namespace MyApp
 {
-    public class StartUp
+    internal class Program
     {
         static void Main(string[] args)
         {
-            var list = new DoublyLinkedList();
-            list.AddFirst(3);
-            Console.WriteLine(string.Join(", ", list.ToArray()));
-            list.AddFirst(2);
-            Console.WriteLine(string.Join(", ", list.ToArray()));
-            list.AddFirst(1);
-            Console.WriteLine(string.Join(", ", list.ToArray()));
+            int[] sizes = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
+            int[,] matrix = new int[sizes[0], sizes[1]];
+            int sumEvenOnOddRows = 0;
+            int sumOddOnEvenCols = 0;
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                int[] input = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    matrix[row, col] = input[col];
+                }
+            }
 
-            list.AddFirst(0);
-            list.AddLast(4);
-            Console.WriteLine(string.Join(", ", list.ToArray()));
+            for (int row = 0; row < matrix.GetLength(0); row++) 
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++) 
+                {
+                    if ((row + 1) % 2 != 0 && matrix[row, col] % 2 == 0)
+                    {
+                        sumEvenOnOddRows += matrix[row, col];
+                    }
+                    if ((row + 1) % 2 == 0 && matrix[row, col] % 2 != 0)
+                    {
+                        sumOddOnEvenCols += matrix[row, col];
+                    }
+                }
+            }
 
-            list.AddLast(100);
-            Console.WriteLine(string.Join(", ", list.ToArray()));
-
-            list.RemoveFirst();
-            Console.WriteLine(string.Join(", ", list.ToArray()));
-
-            list.RemoveLast();
-            Console.WriteLine(string.Join(", ", list.ToArray()));
-
-            list.AddLast(5);
-            Console.WriteLine(string.Join(", ", list.ToArray()));
-
-            Console.WriteLine(list.Count);
-            Console.WriteLine(string.Join(", ", list.ToArray()));
-            list.ForEach();
-
-
-        }
-        static void PritntConsole(int i)
-        {
-            Console.WriteLine(123);
+            Console.WriteLine(sumEvenOnOddRows);
+            Console.WriteLine(sumOddOnEvenCols);
         }
     }
 }
